@@ -5,8 +5,22 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Square from './Square'
 
 class Board extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      squares: Array(9).fill(null) //Note: This builds a new array with 9 spot and fill makes all 9 spots say null. This will be the initial value
+    }
+  }
+
+  buttonClick = () => {
+    console.log('clicked')
+  } 
+
 	selection(squareNum){
-		return <Square />
+		return <Square 
+              value={this.state.squares[squareNum]} 
+              onClick={this.buttonClick}
+              />
 	}
 
 
