@@ -3,20 +3,10 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-class Square extends Component {
-	constructor(props){
-		super(props);
-		this.state = {
-			value: null
-		}
-	}
-
-
-  render() {
+const Square = (props) => {
     return (
-        <td onClick={this.props.onClick} className="square">{this.props.value}</td>
+        <td onClick={props.onClick} className="square">{props.value}</td>
     );
-  }
 }
 
 export default Square;
